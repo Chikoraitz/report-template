@@ -1,9 +1,15 @@
 \setcounter{page}{1}
+\fancypagestyle{styletoc}{
+	\fancyhf{}% Clear header/footer
+	\fancyhead[L]{\textcolor{gray}{\title}}
+	\fancyfoot[L]{\textcolor{gray}{Table of Contents}}
+	\fancyfoot[C]{\thepage}
+}
 
 \chapter{Remarks}
 Document
 
 \tableofcontents
-\thispagestyle{stylenor}
+\thispagestyle{styletoc}
 
 \chapter{Executive Summary}

@@ -16,9 +16,18 @@
 \renewcommand{\footrule}{\color{gray}\oldfootrule}
 \renewcommand{\footrulewidth}{3pt}
 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+
+%%%%%%%%%%
+\renewcommand{\title}{MyTitlePage Report}
+
+%%%%%%%%%%
+
+
 \fancypagestyle{stylenor}{
 	\fancyhf{}% Clear header/footer
-	\fancyhead[L]{\textcolor{gray}{Header}}
+	\fancyhead[L]{\textcolor{gray}{\title}}
+	\fancyfoot[L]{\textcolor{gray}{\leftmark}}
 	\fancyfoot[C]{\thepage}
 }
 
