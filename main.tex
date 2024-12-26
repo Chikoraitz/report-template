@@ -6,22 +6,27 @@
 \usepackage{graphicx}
 \usepackage{pagecolor}
 \usepackage{tgpagella}
+\usepackage{xcolor}
 
+\let\oldheadrule\headrule
+\renewcommand{\headrule}{\color{gray}\oldheadrule}
+\renewcommand{\headrulewidth}{3pt}
 
-\renewcommand{\headrulewidth}{3pt}% Default \headrulewidth is 0.4pt
-\renewcommand{\footrulewidth}{3pt}% Default \footrulewidth is 0pt
+\let\oldfootrule\footrule
+\renewcommand{\footrule}{\color{gray}\oldfootrule}
+\renewcommand{\footrulewidth}{3pt}
 
 \fancypagestyle{stylenor}{
 	\fancyhf{}% Clear header/footer
-	\fancyhead[L]{Header}
+	\fancyhead[L]{\textcolor{gray}{Header}}
 	\fancyfoot[C]{\thepage}
 }
 
-\setlength{\textheight}{1.1\textheight}
+\fancypagestyle{plain}{\pagestyle{stylenor}}
+
+\setlength{\textheight}{1.08\textheight}
 
 \begin{document}
-	\input{titlepage.tex}
-	\input{tableofcontents.tex}
-	\newpage
-	Document
+	\include{titlepage.tex}
+	\include{content.tex}
 \end{document}
