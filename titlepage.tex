@@ -1,0 +1,23 @@
+\newpagecolor{gray}
+\fancypagestyle{styletitlepage}{
+	\fancyhf{}% Clear header/footer
+	\fancyhead[L]{Title Header}
+	\fancyfoot[L]{Title Footer}
+}
+\begin{titlepage}
+	\thispagestyle{styletitlepage}
+	\begin{addmargin}[4cm]{0cm}
+		\vspace*{9em}
+		\begin{flushright}
+		{\Huge
+			[Title]\par
+			[Subtitle]\par}
+		\vspace{6\baselineskip}
+		{\Large\textsc{[Context]}\par}
+		\vfill
+		{\large\emph{Author:} Leonardo Barbosa}
+		\end{flushright}
+	\end{addmargin}
+	\fancyfoot[LE,RO]{\thepage}
+\end{titlepage}
+\newpagecolor{white}
