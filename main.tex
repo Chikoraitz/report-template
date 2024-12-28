@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[a4paper]{geometry}
 \usepackage{graphicx}
+\usepackage{lipsum}
 \usepackage{pagecolor}
 \usepackage{tgpagella}
 \usepackage{xcolor}
@@ -18,17 +19,20 @@
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
 
-%%%%%%%%%%
-\renewcommand{\title}{MyTitlePage Report}
-
+%%%%%%%%%% HEADER
+\renewcommand{\title}{MyTitlePage Report}	% e.g., <Product> Datasheet, <Company> Security Review/Assessment, <Certification> Report
+\newcommand{\entity}{MyEntity}				% e.g.,  <Company>, <Certification Entity>
+\newcommand{\scope}{PUBLIC}					% e.g., PUBLIC, CONFIDENTIAL, ...
 %%%%%%%%%%
 
 
 \fancypagestyle{stylenor}{
 	\fancyhf{}% Clear header/footer
 	\fancyhead[L]{\textcolor{gray}{\title}}
+	\fancyhead[R]{\textcolor{gray}{\entity}}
 	\fancyfoot[L]{\textcolor{gray}{\leftmark}}
 	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{\scope}
 }
 
 \fancypagestyle{plain}{\pagestyle{stylenor}}

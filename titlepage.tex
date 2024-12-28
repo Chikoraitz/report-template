@@ -1,9 +1,13 @@
 \newpagecolor{white}
+\renewcommand{\subtitle}{}						% e.g., Optional
+\newcommand{\context}{MyContext Report}			% e.g., Security Assessment, Report, ...
+\newcommand{\titleHeader}{My Title Header}		% e.g., <Title + Subtitle Summary>
+\newcommand{\titleFooter}{}		% e.g., Optional - <Company>
 
 \fancypagestyle{styletitlepage}{
 	\fancyhf{}% Clear header/footer
-	\fancyhead[L]{\textcolor{gray}{Title Header}}
-	\fancyfoot[L]{Title Footer}
+	\fancyhead[L]{\textcolor{gray}{\titleHeader}}
+	\ifdefined\titleFooter \fancyfoot[L]{\titleFooter} \fi
 }
 
 \begin{titlepage}
@@ -11,11 +15,10 @@
 	\begin{addmargin}[4cm]{0cm}
 		\vspace*{9em}
 		\begin{flushright}
-		{\Huge
-			\title\par
-			[Subtitle]\par}
+		{\Huge \title\par}
+		\ifdefined\subtitle {\huge \subtitle\par} \fi
 		\vspace{6\baselineskip}
-		{\Large\textsc{[Context]}\par}
+		{\Large\textsc{\context}\par}
 		\vfill
 		{\large\emph{Author:} Leonardo Barbosa}
 		\end{flushright}
